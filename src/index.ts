@@ -1,5 +1,7 @@
+require("module-alias/register");
+
 import express, { Express, Request, Response } from "express";
-import configEnv from "./config";
+import configEnv from "config";
 
 const app: Express = express();
 const port = configEnv.PORT;
@@ -9,5 +11,5 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+    console.log(`Server is running at https://localhost:${port}`);
 });
